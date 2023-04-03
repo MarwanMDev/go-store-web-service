@@ -24,6 +24,7 @@ var albums = []album{
 func main() {
 	router := gin.Default()
 	router.Static("/css", "./templates/css/index.css")
+	router.Static("/assets", "./templates/assets")
 	router.LoadHTMLGlob("templates/*.html")
 
 	apiRoutes := router.Group("/api")

@@ -19,21 +19,38 @@
     />
   </head>
   <body>
-    {{ template "navbar.html" }}
+    <!-- {{ template "navbar.html" }} -->
 
-    <div class="container">
-      <div class="card">
-        <div class="card-header">Featured</div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to
-            additional content.
+    <div
+      class="vh-100 vw-100 d-flex flex-column justify-content-center align-items-center"
+      style="
+        width: 120px;
+        background-color: #063970;
+        color: #fff;
+        gap: 5px;
+      "
+    >
+      <div
+        class="d-flex flex-row justify-content-center align-items-center"
+      >
+        <div>
+          <h1>MDev Fake Store API</h1>
+          <p>
+            Fake store rest API for your e-commerce or shopping
+            website prototype.
           </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <button class="btn btn-primary">VIEW DOCS</button>
+        </div>
+        <div class="text-center">
+          <img
+            src="./assets/api-logo.png"
+            alt="api-logo"
+            class="w-50"
+          />
         </div>
       </div>
     </div>
+
     <!-- /.container -->
 
     {{ template "footer.html" }}
