@@ -23,7 +23,6 @@ var albums = []album{
 
 func main() {
 	router := gin.Default()
-	router.Static("/css", "./templates/css/index.css")
 	router.Static("/assets", "./templates/assets")
 	router.LoadHTMLGlob("templates/*.html")
 
@@ -41,7 +40,7 @@ func main() {
 
 func homePage(c *gin.Context) {
 	data := gin.H{
-		"title": "Home Page",
+		"title": "MDev Fake Store API | Home Page",
 	}
 	c.HTML(http.StatusOK, "index.html", data)
 }
