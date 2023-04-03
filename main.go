@@ -23,11 +23,26 @@ var albums = []album{
 
 func main() {
 	router := gin.Default()
-	router.GET("/albums", getAlbums)
-	router.GET("/albums/:id", getAlbumByID)
-	router.POST("/albums", postAlbums)
+	router.Static("/css", "./templates/css/index.css")
+	router.LoadHTMLGlob("templates/*.html")
 
-	router.Run("localhost:8080")
+	apiRoutes := router.Group("/api")
+	{
+		apiRoutes.GET("/albums", getAlbums)
+		apiRoutes.GET("/albums/:id", getAlbumByID)
+		apiRoutes.POST("/albums", postAlbums)
+	}
+
+	router.GET("/", homePage)
+
+	router.Run("localhost:3000")
+}
+
+func homePage(c *gin.Context) {
+	data := gin.H{
+		"title": "Home Page",
+	}
+	c.HTML(http.StatusOK, "index.html", data)
 }
 
 // getAlbums responds with the list of all albums as JSON.
