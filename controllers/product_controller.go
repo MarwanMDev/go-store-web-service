@@ -38,9 +38,9 @@ func CreateProduct() gin.HandlerFunc {
 
 		newProduct := models.Product{
 			Id:          primitive.NewObjectID(),
-			Name:        product.Name,
-			Description: product.Description,
 			Title:       product.Title,
+			Price:       product.Price,
+			Description: product.Description,
 		}
 
 		result, err := productCollection.InsertOne(ctx, newProduct)
@@ -92,7 +92,7 @@ func EditProduct() gin.HandlerFunc {
 			return
 		}
 
-		update := bson.M{"name": product.Name, "location": product.Description, "title": product.Title}
+		update := bson.M{"title": product.Title, "price": product.Price, "description": product.Description}
 		result, err := productCollection.UpdateOne(ctx, bson.M{"id": objId}, bson.M{"$set": update})
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, responses.ProductResponse{Status: http.StatusInternalServerError, Message: "error", Data: map[string]interface{}{"data": err.Error()}})
@@ -129,13 +129,13 @@ func DeleteProduct() gin.HandlerFunc {
 
 		if result.DeletedCount < 1 {
 			c.JSON(http.StatusNotFound,
-				responses.ProductResponse{Status: http.StatusNotFound, Message: "error", Data: map[string]interface{}{"data": "User with specified ID not found!"}},
+				responses.ProductResponse{Status: http.StatusNotFound, Message: "error", Data: map[string]interface{}{"data": "Product with specified ID not found!"}},
 			)
 			return
 		}
 
 		c.JSON(http.StatusOK,
-			responses.ProductResponse{Status: http.StatusOK, Message: "success", Data: map[string]interface{}{"data": "User successfully deleted!"}},
+			responses.ProductResponse{Status: http.StatusOK, Message: "success", Data: map[string]interface{}{"data": "Product successfully deleted!"}},
 		)
 	}
 }
