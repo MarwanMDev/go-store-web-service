@@ -14,6 +14,7 @@ func main() {
 	router.LoadHTMLGlob("templates/*.html")
 
 	router.GET("/", homePage)
+	router.GET("/introduction", introduction)
 
 	//run database
 	configs.ConnectDB()
@@ -29,4 +30,11 @@ func homePage(c *gin.Context) {
 		"title": "MDev Fake Store API | Home Page",
 	}
 	c.HTML(http.StatusOK, "index.html", data)
+}
+
+func introduction(c *gin.Context) {
+	data := gin.H{
+		"title": "MDev Fake Store API | Introduction",
+	}
+	c.HTML(http.StatusOK, "introduction.html", data)
 }

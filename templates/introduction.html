@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  {{ template "head.html" .}}
+
+  <body>
+    {{ template "navbar.html" }}
+
+    <div
+      class="vw-100 d-flex flex-column justify-content-center align-items-center gap-5 my-5"
+    >
+      <div class="w-75 d-flex flex-row banner">
+        <div
+          class="w-25 d-flex flex-column justify-content-start align-items-start"
+        >
+          <h4>Rest API</h4>
+          <a href="/introduction" class="text-decoration-none"
+            >Introduction</a
+          >
+          <a href="/products" class="text-decoration-none"
+            >Products</a
+          >
+          <a href="/products" class="text-decoration-none"
+            >Filter Products</a
+          >
+          <a href="/products" class="text-decoration-none"
+            >Categories</a
+          >
+        </div>
+        <div
+          class="w-50 d-flex flex-column justify-content-start align-items-start"
+        >
+          <h3>Introduction</h3>
+          <p style="text-align: justify">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec ultricies, enim non vestibulum lacinia, sapien nisi
+            volutpat nisi, eget faucibus odio quam in turpis.
+            Pellentesque habitant morbi tristique senectus et netus et
+            malesuada fames ac turpis egestas. Suspendisse efficitur
+            efficitur blandit. Quisque et nunc non ante accumsan
+            ornare eget eu mauris. Pellentesque rhoncus dapibus
+            tempor. Duis nulla lectus, mollis ut sem sed, varius
+            lacinia arcu. Mauris tellus elit, ultricies eget blandit
+            ac, rhoncus non massa. Proin rutrum convallis ex aliquam
+            dignissim. Vestibulum mattis id orci luctus vestibulum.
+          </p>
+          <h6>This API includes features like:</h6>
+          <ul class="list-group w-100">
+            <li class="list-group-item">Pagination</li>
+            <li class="list-group-item">Auth with JWT</li>
+            <li class="list-group-item">Upload Files</li>
+            <li class="list-group-item">
+              Filter products by category
+            </li>
+            <li class="list-group-item">
+              Create users and check to see if they already exist
+            </li>
+            <li class="list-group-item">All CRUD Operations</li>
+            <li class="list-group-item">
+              Postman and Insomnia Files
+            </li>
+            <li class="list-group-item">And much more</li>
+          </ul>
+        </div>
+        <div
+          class="w-25 d-flex flex-column justify-content-start align-items-center"
+        >
+          <h6>ON THIS PAGE</h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- /.container -->
+
+    {{ template "footer.html" }}
+  </body>
+</html>

@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+  {{ template "head.html" .}}
 
-    <title>{{.title}}</title>
-
-    <!-- Bootstrap core CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link href="./assets/index.css" rel="stylesheet" />
-  </head>
   <body>
     {{ template "navbar.html" }}
 
@@ -40,7 +19,9 @@
             Fake store rest API for your e-commerce or shopping
             website prototype.
           </p>
-          <button class="btn btn-primary">VIEW DOCS</button>
+          <a href="/introduction" class="btn btn-primary"
+            >VIEW DOCS</a
+          >
         </div>
         <div class="text-center">
           <img
