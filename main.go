@@ -1,6 +1,8 @@
 package main
 
 import (
+	"github.com/MarwanMDev/go-store-web-service/configs"
+
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -34,6 +36,9 @@ func main() {
 	}
 
 	router.GET("/", homePage)
+
+	//run database
+	configs.ConnectDB()
 
 	router.Run("localhost:3000")
 }
