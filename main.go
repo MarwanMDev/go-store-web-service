@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/MarwanMDev/go-store-web-service/configs"
-
+	"example/go-store-web-service/configs"
+	"example/go-store-web-service/routes"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -39,6 +39,9 @@ func main() {
 
 	//run database
 	configs.ConnectDB()
+
+	//routes
+	routes.ProductRoute(router)
 
 	router.Run("localhost:3000")
 }
