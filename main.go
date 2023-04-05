@@ -15,6 +15,7 @@ func main() {
 
 	router.GET("/", homePage)
 	router.GET("/introduction", introduction)
+	router.GET("/rest-products", restProducts)
 
 	//run database
 	configs.ConnectDB()
@@ -37,4 +38,11 @@ func introduction(c *gin.Context) {
 		"title": "MDev Fake Store API | Introduction",
 	}
 	c.HTML(http.StatusOK, "introduction.html", data)
+}
+
+func restProducts(c *gin.Context) {
+	data := gin.H{
+		"title": "MDev Fake Store API | Rest Products",
+	}
+	c.HTML(http.StatusOK, "rest-products.html", data)
 }

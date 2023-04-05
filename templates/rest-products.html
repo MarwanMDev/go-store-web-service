@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  {{ template "head.html" .}}
+
+  <body>
+    {{ template "navbar.html" }}
+
+    <div
+      class="vw-100 d-flex flex-column justify-content-center align-items-center gap-5 my-5"
+    >
+      <div class="w-75 d-flex flex-row banner">
+        <div
+          class="w-25 d-flex flex-column justify-content-start align-items-start"
+        >
+          <h4>Rest API</h4>
+          <a href="/introduction" class="text-decoration-none"
+            >Introduction</a
+          >
+          <a href="/rest-products" class="text-decoration-none"
+            >Products</a
+          >
+          <a href="/products" class="text-decoration-none"
+            >Filter Products</a
+          >
+          <a href="/products" class="text-decoration-none"
+            >Categories</a
+          >
+          <a href="/products" class="text-decoration-none">Users</a>
+          <a href="/products" class="text-decoration-none"
+            >Auth JWT</a
+          >
+          <a href="/products" class="text-decoration-none mb-2"
+            >Files</a
+          >
+          <h4>Resources</h4>
+          <a href="/products" class="text-decoration-none">Postman</a>
+        </div>
+        <div
+          class="w-50 d-flex flex-column justify-content-start align-items-start overflow-scroll"
+        >
+          <h3>Products</h3>
+          <h4>Get all products</h4>
+          <p style="text-align: justify">
+            You can access the list of 200 products by using the
+            <code>/products</code> endpoint.
+          </p>
+          <p style="text-align: justify">Request:</p>
+          <div
+            class="p-2 w-100 fs-6 fw-lighter rounded mb-3"
+            style="background-color: black"
+          >
+            [GET] https://api.mdevfs.co/api/v1/products
+          </div>
+          <p style="text-align: justify">Response:</p>
+          <div
+            class="p-2 w-100 fs-6 fw-lighter rounded mb-3"
+            style="background-color: black"
+          >
+            <pre class="">
+              <code>
+  [
+    {
+      "id": 4,
+      "title": "Handmade Fresh Table",
+      "price": 687,
+      "description": "Andy shoes are designed to keeping in...",
+      "category": {
+        "id": 5,
+        "name": "Others",
+        "image": "https://placeimg.com/640/480/any?r=0.591926261873231"
+      },
+      "images": [
+        "https://placeimg.com/640/480/any?r=0.9178516507833767",
+        "https://placeimg.com/640/480/any?r=0.9300320592588625",
+        "https://placeimg.com/640/480/any?r=0.8807778235430017"
+      ]
+    }
+    // ...
+  ]
+              </code>
+            </pre>
+          </div>
+        </div>
+        <div
+          class="w-25 d-flex flex-column justify-content-start align-items-center"
+        >
+          <h6>ON THIS PAGE</h6>
+        </div>
+      </div>
+    </div>
+
+    <!-- /.container -->
+
+    {{ template "footer.html" }}
+  </body>
+</html>
