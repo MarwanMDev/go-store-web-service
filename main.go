@@ -13,8 +13,7 @@ var (
 )
 
 func main() {
-	// router := gin.Default()
-	router := gin.New()
+	router := gin.Default()
 	router.Static("/assets", "./templates/assets")
 	router.LoadHTMLGlob("templates/*.html")
 
