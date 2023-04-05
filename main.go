@@ -8,8 +8,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var (
+	app *gin.Engine
+)
+
 func main() {
-	router := gin.Default()
+	// router := gin.Default()
+	router := gin.New()
 	router.Static("/assets", "./templates/assets")
 	router.LoadHTMLGlob("templates/*.html")
 
@@ -23,7 +28,7 @@ func main() {
 	//routes
 	routes.ProductRoute(router)
 
-	router.Run("localhost:3000")
+	// router.Run("localhost:3000")
 }
 
 func homePage(c *gin.Context) {
@@ -45,4 +50,8 @@ func restProducts(c *gin.Context) {
 		"title": "MDev Fake Store API | Rest Products",
 	}
 	c.HTML(http.StatusOK, "rest-products.html", data)
+}
+
+func Handler(w http.ResponseWriter, r *http.Request) {
+	app.ServeHTTP(w, r)
 }
