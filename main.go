@@ -27,7 +27,7 @@ func main() {
 	//routes
 	routes.ProductRoute(router)
 
-	// router.Run("localhost:3000")
+	router.Run("localhost:3000")
 }
 
 func homePage(c *gin.Context) {
